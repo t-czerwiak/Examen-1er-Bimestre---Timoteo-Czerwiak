@@ -13,7 +13,7 @@ public class VTV : MonoBehaviour
     int añoActual = 2025;
     void Start()
     {
-        if ((patente == " " || patente == "") || (modelo < 1900 || modelo > añoActual) || (kmRecorridos < 0) ||
+        if ((patente == "") || (modelo < 1900 || modelo > añoActual) || (kmRecorridos < 0) ||
             (vencimientoVTVAct > añoActual || vencimientoVTVAct < modelo) || (hcPPM < 5 || hcPPM > 100))
         {
             Debug.Log("Error, VTV no aprobada");
@@ -21,8 +21,6 @@ public class VTV : MonoBehaviour
         }
 
         promedio = kmRecorridos / (añoActual - modelo);
-
-        Debug.Log(promedio);
 
         if (promedio < 10000)
         {
